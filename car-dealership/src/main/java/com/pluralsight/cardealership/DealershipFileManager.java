@@ -10,6 +10,7 @@ public class DealershipFileManager {
             FileReader fileReader = new FileReader("src/main/resources/inventory.csv");
             BufferedReader bufferedreader = new BufferedReader(fileReader);
             String currentLine = bufferedreader.readLine();
+            Dealership dealership = getDealership(currentLine);
             while ( (currentLine = bufferedreader.readLine()) != null) {
                 Vehicle vehicle = getVehicle(currentLine);
                 Dealership.addVehicle(vehicle);
@@ -33,4 +34,19 @@ public class DealershipFileManager {
         Vehicle vehicle = new Vehicle(carID, year, make, model, type, color, mileage, price);
         return vehicle;
     }
+
+    private static Dealership getDealership(String currentLine) {
+        String[] carInfo = currentLine.split("[|]");
+        String name = carInfo[0];
+        String address = carInfo[1];
+        String phone = carInfo[2];
+
+        Dealership dealership = new Dealership(name, address, phone);
+        return dealership;
+    }
+
+    public static String saveDealership(){
+        return "\n\nSaved to Inventory";
+    }
+
 }
