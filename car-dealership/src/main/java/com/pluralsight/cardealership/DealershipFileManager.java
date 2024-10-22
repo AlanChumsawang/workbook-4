@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 public class DealershipFileManager {
 
+
     public static void readCSV(Scanner scanner) {
         try {
             FileReader fileReader = new FileReader("src/main/resources/inventory.csv");
@@ -19,6 +20,10 @@ public class DealershipFileManager {
         catch (Exception e) {
             System.out.println("File not found");
         }
+    }
+
+    public static String saveDealership(){
+        return "\n\nSaved to Inventory";
     }
 
     private static Vehicle getVehicle(String currentLine) {
@@ -41,12 +46,9 @@ public class DealershipFileManager {
         String address = carInfo[1];
         String phone = carInfo[2];
 
-        Dealership dealership = new Dealership(name, address, phone);
-        return dealership;
+        return new Dealership(name, address, phone);
     }
 
-    public static String saveDealership(){
-        return "\n\nSaved to Inventory";
-    }
+
 
 }

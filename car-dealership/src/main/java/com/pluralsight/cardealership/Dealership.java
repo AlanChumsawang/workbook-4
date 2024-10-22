@@ -7,19 +7,20 @@ public class Dealership {
     private final String address;
     private final String phone;
 
-    private static final ArrayList<Vehicle> inventory = new ArrayList<Vehicle>();
+    private ArrayList<Vehicle> inventory;
 
     public Dealership(String name, String address, String phone) {
         this.name = name;
         this.address = address;
         this.phone = phone;
+        this.inventory = new ArrayList<>();
     }
 
-    public static void addVehicle(Vehicle vehicle){
+    public void addVehicle(Vehicle vehicle){
         inventory.add(vehicle);
     }
 
-    public static void get
+    public Vehicle getAllVehicals(ArrayList inventory)
 
 
 }
