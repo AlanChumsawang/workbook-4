@@ -26,5 +26,5 @@ public class Dealership {
     public ArrayList<Vehicle> getAllVehicles() {
         return inventory;
     }
-    
+
 }
