@@ -1,10 +1,11 @@
 package com.pluralsight.cardealership.test;
 
-import static org.junit.jupiter.api.Assertions.*;
-import com.pluralsight.cardealership.*;
+import com.pluralsight.cardealership.Dealership;
+import com.pluralsight.cardealership.Vehicle;
 
-class DealershipTest {
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
+public class DealershipTest {
     private Dealership dealership;
     private Vehicle vehicle;
 
@@ -49,6 +50,6 @@ class DealershipTest {
 
     @org.junit.jupiter.api.Test
     void getAllVehicles() {
-    assertEquals(1, dealership.getAllVehicles().size());
+        assertEquals(1, dealership.getAllVehicles().size());
     }
 }
