@@ -31,6 +31,7 @@ public class UserInterface {
                 break;
             case "4":
                 // Remove a vehicle
+                removeVehicleMenu(inputScanner);
                 break;
             case "5":
                 // Exit
@@ -46,7 +47,7 @@ public class UserInterface {
 
     // Display the main menu
     private static void displayMainMenu() {
-        System.out.println("""
+        System.out.print("""
                         ==============================
                         Welcome to the Car Dealership
                         ==============================
@@ -93,8 +94,19 @@ public class UserInterface {
         inputScanner.nextLine();
         Vehicle vehicle = new Vehicle(vin, year, make, model, type, color, odometer, price);
         dealership.addVehicle(vehicle);
+    }
 
-
+    private void removeVehicleMenu(Scanner inputScanner){
+        System.out.print("Enter VIN of the vehicle to remove: ");
+        int vin = inputScanner.nextInt();
+        inputScanner.nextLine(); // Consume newline
+        for (Vehicle vehicle : dealership.getAllVehicles()) {
+            if (vehicle.getVin() == vin) {
+                dealership.removeVehicle(vehicle);
+                System.out.println("Vehicle removed.");
+                return;
+            }
+        }
     }
 
 
