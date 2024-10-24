@@ -10,8 +10,8 @@ public class DealershipFileManager {
         try {
             FileReader fileReader = new FileReader(file);
             BufferedReader bufReader = new BufferedReader(fileReader);
-            String currentLine = bufReader.readLine();
-            String[] dealershipInfo = currentLine.split("[|]");
+            String currentLine = bufReader.readLine();// Read the first line
+            String[] dealershipInfo = currentLine.split("[|]");// Split the line at each | and place into dealership info
             String dealershipName = dealershipInfo[0];
             String dealershipAddress = dealershipInfo[1];
             String dealershipPhone = dealershipInfo[2];

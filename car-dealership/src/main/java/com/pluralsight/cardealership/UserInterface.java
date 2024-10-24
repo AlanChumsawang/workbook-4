@@ -1,5 +1,6 @@
 package com.pluralsight.cardealership;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class UserInterface {
@@ -19,7 +20,7 @@ public class UserInterface {
         String userInput = inputScanner.nextLine(); // Wait for user input
         switch (userInput) {
             case "1":
-                System.out.println( dealership.getAllVehicles());
+                displayVehicles(dealership.getAllVehicles());
                 break;
             case "2":
                 // Search for a vehicle
@@ -164,6 +165,14 @@ public class UserInterface {
                 System.out.println("Vehicle removed.");
                 return;
             }
+        }
+    }
+
+    private void displayVehicles(ArrayList<Vehicle> vehicleList){
+        for (Vehicle vehicle : vehicleList) {
+            System.out.print(vehicle.getYear() + " " + vehicle.getMake() + " " + vehicle.getModel() + " \n" + "    "
+                    + "Type: " + vehicle.getVehicleType() + " | Milage: " + vehicle.getOdometer() + " | Price: $" +
+                    vehicle.getPrice() + "\n");
         }
     }
 
