@@ -23,7 +23,7 @@ public class UserInterface {
                 break;
             case "2":
                 // Search for a vehicle
-                searchMenu();
+                searchMenu(inputScanner);
                 break;
             case "3":
                 // Add a vehicle
@@ -59,7 +59,7 @@ public class UserInterface {
                 """);
     }
 
-    private static void searchMenu(){
+    private static void displaySearchMenu(){
         System.out.print("""
                 1. Search by Price
                 2. Search by Make and Model
@@ -71,6 +71,64 @@ public class UserInterface {
                 """);
     }
 
+    private void searchMenu(Scanner scanner){
+        displaySearchMenu();
+        String userInput = scanner.nextLine();
+        switch (userInput){
+            case "1":
+                // Search by price
+                System.out.print("Enter minimum price: ");
+                double minPrice = scanner.nextDouble();
+                scanner.nextLine(); // Consume newline
+                System.out.print("Enter maximum price: ");
+                double maxPrice = scanner.nextDouble();
+                scanner.nextLine(); // Consume newline
+                System.out.println(dealership.getVehicleByPrice(minPrice, maxPrice));
+                break;
+            case "2":
+                // Search by make and model
+                System.out.print("Enter make: ");
+                String make = scanner.nextLine();
+                System.out.print("Enter model: ");
+                String model = scanner.nextLine();
+                System.out.println(dealership.getVehicleByMakeModel(make, model));
+                break;
+            case "3":
+                // Search by year
+                System.out.print("Enter year: ");
+                int year = scanner.nextInt();
+                scanner.nextLine(); // Consume newline
+                System.out.println(dealership.getVehicleByYear(year));
+                break;
+            case "4":
+                // Search by color
+                System.out.print("Enter color: ");
+                String color = scanner.nextLine();
+                System.out.println(dealership.getVehicleByColor(color));
+                break;
+            case "5":
+                // Search by mileage
+                System.out.print("Enter maximum mileage: ");
+                int mileage = scanner.nextInt();
+                scanner.nextLine(); // Consume newline
+                System.out.println(dealership.getVehicleByMileage(mileage));
+                break;
+            case "6":
+                // Search by type
+                System.out.print("Enter type: ");
+                String type = scanner.nextLine();
+                System.out.println(dealership.getVehicleByType(type).toString());
+                break;
+            case "7":
+                // Return to main menu
+                display();
+                break;
+            default:
+                System.out.println("Invalid input. Please try again.");
+                searchMenu(scanner);
+
+        }
+    }
     private void addVehicleMenu(Scanner inputScanner){
         System.out.print("Enter VIN: ");
         int vin = inputScanner.nextInt();
