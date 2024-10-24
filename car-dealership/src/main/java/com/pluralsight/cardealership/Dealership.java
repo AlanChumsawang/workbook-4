@@ -62,7 +62,7 @@ public class Dealership {
         ArrayList<Vehicle> vehicleOfType = new ArrayList<Vehicle>();
         return vehicleOfType;
     }
-    
+
 
 
 
