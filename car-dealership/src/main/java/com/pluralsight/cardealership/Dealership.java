@@ -26,5 +26,14 @@ public class Dealership {
     public ArrayList<Vehicle> getAllVehicles() {
         return inventory;
     }
-
+    
+    @Override
+    public String toString() {
+        return "Dealership{" +
+                "name='" + name + '\'' +
+                ", address='" + address + '\'' +
+                ", phone='" + phone + '\'' +
+                ", inventory=" + inventory +
+                '}';
+    }
 }

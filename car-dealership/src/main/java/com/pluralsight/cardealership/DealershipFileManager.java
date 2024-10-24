@@ -6,9 +6,9 @@ import java.io.FileReader;
 public class DealershipFileManager {
 
 
-    public void getDealership(){
+    public Dealership getDealership(String file){
         try {
-            FileReader fileReader = new FileReader("src/main/resources/inventory.csv");
+            FileReader fileReader = new FileReader(file);
             BufferedReader bufReader = new BufferedReader(fileReader);
             String currentLine = bufReader.readLine();
             String[] dealershipInfo = currentLine.split("[|]");
@@ -29,6 +29,7 @@ public class DealershipFileManager {
                 Vehicle vehicle = new Vehicle(vin, year, make, model, type, color, odometer, price);
                 dealership.addVehicle(vehicle);
             }
+            return dealership;
         }
         catch(Exception e){
             System.out.println("File not found");
