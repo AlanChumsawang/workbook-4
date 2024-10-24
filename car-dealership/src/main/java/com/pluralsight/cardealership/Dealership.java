@@ -26,7 +26,18 @@ public class Dealership {
     public ArrayList<Vehicle> getAllVehicles() {
         return inventory;
     }
-    
+
+    public  ArrayList<Vehicle> getVehicleByPrice(double min, double max) {
+        ArrayList<Vehicle> vehiclesWithinPriceRange = new ArrayList<>();
+        for (Vehicle vehicle : inventory) {
+            if (vehicle.getPrice() >= min && vehicle.getPrice() <= max) {
+                vehiclesWithinPriceRange.add(vehicle);
+            }
+            return vehiclesWithinPriceRange; // Return the list of vehicles within the price range
+        }
+        return null; // Return null if no vehicle is found in the price range
+    }
+
     @Override
     public String toString() {
         return "Dealership{" +
