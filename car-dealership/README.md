@@ -11,4 +11,11 @@ The home screen is the main menu of the application. It provides the following o
 4. **Remove a vehicle**: Allows the user to remove a vehicle from the inventory by VIN.
 5. **Exit**: Exits the application.
 
-### Main Menu Display
+## Search Screen
+This screens allows the user to querry the inventory based on the following filers:
+1. **Make**: Search for vehicles by their make (e.g., Toyota, Ford).
+2. **Model**: Search for vehicles by their model (e.g., Camry, Mustang).
+3. **Year**: Search for vehicles by their year of manufacture.
+4. **Price**: Search for vehicles by their price range.
+5. **VIN**: Search for vehicles by their VIN.
+
