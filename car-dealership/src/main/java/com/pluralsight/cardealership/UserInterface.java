@@ -170,6 +170,7 @@ public class UserInterface {
             if (vehicle.getVin() == vin) {
                 dealership.removeVehicle(vehicle);
                 System.out.println("Vehicle removed.");
+                fileManager.saveDealership(dealership);
                 return;
             }
         }
